@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-echo "-----> Nothing to do."
+BUILD_DIR=$1
+
+curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack-common.tar.gz | tar xz
+. bin/java
+
+echo "Installing Java 8..."
+
+install_java ${BUILD_DIR} "1.8"
+jdk_overlay ${BUILD_DIR}
+
+echo "Done"
