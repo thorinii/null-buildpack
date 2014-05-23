@@ -11,5 +11,3 @@ addons:
   heroku-postgresql:dev
 
 EOF
-
-echo "  web: app/bin/summis-server -Dhttp.port=$PORT $JAVA_OPTS"
