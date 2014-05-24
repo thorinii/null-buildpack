@@ -9,6 +9,9 @@ curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack
 echo "Installing Java 8..."
 
 install_java ${BUILD_DIR} "1.8"
-jdk_overlay ${BUILD_DIR}
+
+echo "Installed."
+
+# jdk_overlay ${BUILD_DIR}
 
 echo "Done"
